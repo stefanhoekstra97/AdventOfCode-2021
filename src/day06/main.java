@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class main {
 
     public static void main(String[] args) {
-        File input = new File("F://AdventOfCode/Inputfiles/daySix.txt");
+        File input = new File("F://AdventOfCode-2021/Inputfiles/daySix.txt");
 
         Scanner scnr = null;
         try {

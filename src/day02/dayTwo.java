@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class dayTwo {
 
     public static void main(String[] args) {
-        File input = new File("F://AdventOfCode/Inputfiles/dayTwo.txt");
+        File input = new File("F://AdventOfCode-2021/Inputfiles/dayTwo.txt");
         Scanner scnr = null;
         try {
             scnr = new Scanner(input);

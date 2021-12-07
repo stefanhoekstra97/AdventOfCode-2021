@@ -86,7 +86,7 @@ public class dayFour {
 
 
     public void readPuzzles() {
-        File input = new File("F://AdventOfCode/Inputfiles/dayFour.txt");
+        File input = new File("F://AdventOfCode-2021/Inputfiles/dayFour.txt");
 
         Scanner scnr = null;
         try {
