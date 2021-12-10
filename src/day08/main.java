@@ -3,9 +3,7 @@ package day08;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.stream.Collectors;
 
 public class main {
     // Length of known digit reprs.
@@ -17,7 +15,7 @@ public class main {
     String[] fullInput;
 
     public main() throws IOException {
-        this.fullInput =  Files.readString(Paths.get("F://AdventOfCode-2021/Inputfiles/dayEight.txt")).split("\r\n");
+        this.fullInput =  Files.readString(Paths.get("F://AdventOfCode-2021/Inputfiles/dayEightTest.txt")).split("\r\n");
     }
 
     public static void main(String[] args) throws IOException {
@@ -122,12 +120,13 @@ public class main {
         return charDiff;
     }
 
-    private int part1() {
-        ArrayList<String> secondPartOfInput = new ArrayList<>();
-        for (String s :  this.fullInput) {
-            secondPartOfInput.addAll(Arrays.stream(s.split("\\|")[1].split(" ")).collect(Collectors.toList()));
-        }
-        int result = (int) secondPartOfInput.stream().filter(s -> s.length() == 2 || s.length() == 3 || s.length() == 7 || s.length() == 4).count();
-        return result;
+    private int part1() throws IOException {
+        return (int) Files.readString(Paths.get("F://AdventOfCode-2021/Inputfiles/dayEight.txt"))
+                .lines()
+                .map(s -> s.substring(s.indexOf(" | ") + 1))
+                .map(s -> s.split(" ")).flatMap(Arrays::stream)
+                .filter(s -> s.length() == 2 || s.length() == 3 || s.length() == 7 || s.length() == 4)
+                .count();
+
     }
 }
